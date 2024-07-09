@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Authentication</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div id="auth-container">
+      <div id="auth-left">
+        <div id="auth-content">
+          <a href="index.html">
+            <img src="./Assets/Images/large-logo.png" alt="logo" />
+  
+              </a>
+          <p>Welcome back!</p>
+          <p>Please login/Signup to your account.</p>
+        </div>
+        <form action="submit" id="auth">
+            <div class="fields">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" required>
+            </div>
+            <div class="fields">
+                <label for="Password">Password</label>
+                <input type="Password" id="password" required>
+            </div>
+            
+            <div id="form-handles">
+               <div id="rememberme"> <input type="checkbox" name="rememberme" >
+                <label for="rememberme">Remember Me</label></div>
+                <label for="Forgot Password?">Forgot Password?</label>
+            </div>
+            <div id="form-btns">
+                <div id="formlogin-btn" onclick="handleAuth()">Login</div>
+                <div id="formsignup-btn" onclick="handleSignup()">Signup</div>
+
+            </div>
+
+        </form>
+        <ul id="auth-methods">
+            <li>Or Login with</li>
+            <li>Facebook</li>
+            <li>Google</li>
+        </p>
+      </div>
+      <img src="./Assets/Images/Graduate-Cap.png" alt="" id="auth-img" />
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
