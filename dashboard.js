@@ -4,38 +4,25 @@ const handleLogout = () => {
   const currentUserIndex = users.findIndex(user => user.username === username);
 
   if (currentUserIndex !== -1) {
-    // Update isLoggedIn status to false for the current user
-    console.log(currentUserIndex)
-    console.log()
     const updatedUser = {
       ...users[currentUserIndex],
       isLoggedIn: false
     };
 
-    // Update the users array with the updated user
     const updatedUsers = [
       ...users.slice(0, currentUserIndex),
       updatedUser,
       ...users.slice(currentUserIndex + 1)
     ];
 
-    // Save the updated users array back to localStorage
     localStorage.setItem("users", JSON.stringify(updatedUsers));
-
-    // Log updated users array
     console.log("Updated Users Array:", updatedUsers);
   }
 
-  // Remove currentUser from localStorage
   localStorage.removeItem("currentUser");
-
-  // Log confirmation message
   console.log("User logged out successfully.");
-
-  // Redirect to login page
   window.location.href = "login.html";
 };
-
 
 console.log("Dashboard loaded");
 
@@ -56,18 +43,15 @@ if (userData) {
 
     if (userDataObj.role === "admin") {
       console.log("Role is admin. Fetching users...");
-      displayAllUsers(); // Call function to display users only if admin
+      displayAllUsers();
     } else {
       console.log("Role is non-admin.");
-      // Handle display for non-admin users if needed
     }
   } catch (error) {
     console.error('Error parsing userData:', error);
-    // Handle error if userData parsing fails
   }
 } else {
   console.error('No userData found.');
-  // Handle case where no userData is found
 }
 
 function displayAllUsers() {
